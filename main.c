@@ -45,8 +45,35 @@ void menuLocal(){
     return menuLocal(); //Aqui tem que ser menuLocal()
     }
 
+//BUSCAR POR ID
+
+void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
+    int idBusca;
+    int encontrado = 0;
+
+    printf("Qual ID deseja buscar? ");
+    scanf("%d", &idBusca);
+
+    for (int i = 0; i < qtd; i++) {
+        if (ids[i] == idBusca) {
+            printf("\nAgente encontrado!\n");
+            printf("ID: %d\n", ids[i]);
+            printf("Nome: %s\n", nomes[i]);
+            printf("Nota: %.1f\n", notas[i]);
+
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if (encontrado == 0) {
+        printf("Nenhum agente encontrado com o ID %d.\n", idBusca);
+    }
+}
+
+
+//2. Como chamar essa função n
 void listar(); //tudo que eu colocar como void vai ser uma função. Estou escrevendo elas fora do main por enquanto. se quiser mudar pode mudar - mi
-void buscarId();
 void buscarNome();
 void buscarSetor();
 void encerrar();
