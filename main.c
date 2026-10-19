@@ -76,10 +76,33 @@ void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
     }
 }
 
+//Tentando fazer a busca por nome
+//Ainda não está funcionando...
+/*
+void buscarNome() {
+    char nomeBusca;
+    int encontradoNome = 0;
+
+    printf("Qual nome deseja buscar? ");
+    scanf("%c", &nomeBusca);
+
+    if (nomeBusca == nomeIA[i][0]){
+        printf("\nAgente encontrado!\n");
+        printf("ID: %d\n", ids[i]);
+        printf("Nome: %s\n", nomes[i]);
+        printf("Nota: %.1f\n", notas[i]);
+
+        encontradoNome = 1;
+        break;
+    }
+    if (encontradoNome == 0) {
+            printf("Nenhum agente encontrado com o nome %c.\n", nomeBusca);
+    }
+}
+*/
 
 //2. Como chamar essa função n
 void listar(); //tudo que eu colocar como void vai ser uma função. Estou escrevendo elas fora do main por enquanto. se quiser mudar pode mudar - mi
-void buscarNome();
 void buscarSetor();
 void encerrar();
 
