@@ -1,4 +1,4 @@
-//TESTE PARA GITHUB
+//TO DO - PARA FAZER! \/
 
 //criar as funçoes comentadas
 
@@ -8,15 +8,17 @@ menulocal(X) (devem ser dentro das funçoes?
 menugeral(i)
 */
 
-//int main
 
-//fazer um do-while pra apresentar o menu geral ao menos uma vez dar um return 1 se o user encerrar o programa. while resposta menu != 1
+//fazer um do-while pra apresentar o menu geral ao menos uma vez dar um return 1 se o user
+//encerrar o programa. while resposta menu != 1
 
-//(switch-case talvez) printf("Digite o número correspondente á sua escolha:\n1- cadastrar agente\n2- listar agentes\n3- buscar agente por id\n4- buscar agente por nome\n5- encerrar programa");
+//(switch-case talvez) printf("Digite o número correspondente á sua escolha:\n1- cadastrar agente
+//\n2- listar agentes\n3- buscar agente por id\n4- buscar agente por nome\n5- encerrar programa");
 
 //printf("menu local:\n1- Editar este agente\n2-excluir este agente\n3-voltar ao menu geral");
 
-//TEMOS QUE FAZER ALGUMA OPÇÃO CASO O USUÁRIO DIGITE UM NÚMERO INVÁLIDO OU COLOQUE UM LETRA, PQ POR AGORA ESTÁ QUEBRANDO O PROGRAMA
+//TEMOS QUE FAZER ALGUMA OPÇÃO CASO O USUÁRIO DIGITE UM NÚMERO INVÁLIDO OU COLOQUE UM LETRA,
+//PQ POR AGORA ESTÁ QUEBRANDO O PROGRAMA
 
 
 
@@ -29,12 +31,12 @@ void menuGeral(){
         printf("\n1 - Cadastrar\n");
         printf("2 - Listar\n");
         printf("3 - Buscar ID\n");
-        printf("4 - Buscar Nome\n"); //faltava vírgula
+        printf("4 - Buscar Nome\n");
         printf("5 - Buscar Setor\n");
         printf("6 - Encerrar programa\n");
         printf("Digite sua a opção desejada: ");
         scanf("%d", &menusinhoGeral);
-        return menuGeral();    //Tinha um ';' a mais e aqui tem que ser menuGeral()
+        return menuGeral();
         }
 void menuLocal(){
     int menusinhoLocal = 0;
@@ -47,6 +49,8 @@ void menuLocal(){
 
 //BUSCAR POR ID
 
+//Função de buscarID
+//Recebe a lista de ID's,nomes, notas e qtd total
 void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
     int idBusca;
     int encontrado = 0;
@@ -54,6 +58,7 @@ void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
     printf("Qual ID deseja buscar? ");
     scanf("%d", &idBusca);
 
+    //Não sei até hoje explicar 'int i' kkkk
     for (int i = 0; i < qtd; i++) {
         if (ids[i] == idBusca) {
             printf("\nAgente encontrado!\n");
@@ -65,7 +70,7 @@ void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
             break;
         }
     }
-
+    //Caso o usuário coloque um ID que não existe
     if (encontrado == 0) {
         printf("Nenhum agente encontrado com o ID %d.\n", idBusca);
     }
@@ -77,6 +82,7 @@ void listar(); //tudo que eu colocar como void vai ser uma função. Estou escreve
 void buscarNome();
 void buscarSetor();
 void encerrar();
+
 //nós vamos ter que usar arranjos para criar matrizes.
 int ids[];
 char ia[];
@@ -86,14 +92,12 @@ char nota[];
 char setores[];
 
 
-//int opcaoGeral() acho que isso n precisa
-
 int main() {
     // I.A's cadastradas para teste.
     char nomes[MAX][50] = {"Gabrielly", "Xcode", "Margaret"}; //está com um fluxo de retorno, quando cadawstramos ele volta a pedir o nome novamente.
     float notas[MAX] = {4.0,4.0,5.0}; // pensei de ser int já que tem que ser de 1-5
 
-    int qtd = 3; //Como já temos 3 cadastradas, tem q manter em 3 por ser qtd mínima -Mudei os nomes das ias para as que definimos no dia da reuniao-milena
+    int qtd = 3; // Deixar 3 como valor do int qtd, não mudar.
     int i;
     do {
         menuGeral();
