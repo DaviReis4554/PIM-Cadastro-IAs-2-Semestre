@@ -1,146 +1,145 @@
-//TO DO - PARA FAZER! \/
-
-//criar as funçoes comentadas
-
-/*criar as funçoes normais
-agenteIA(id,nome, script, nota, classe)
-menulocal(X) (devem ser dentro das funçoes?
-menugeral(i)
-*/
-
-
-//fazer um do-while pra apresentar o menu geral ao menos uma vez dar um return 1 se o user
-//encerrar o programa. while resposta menu != 1
-
-//(switch-case talvez) printf("Digite o número correspondente á sua escolha:\n1- cadastrar agente
-//\n2- listar agentes\n3- buscar agente por id\n4- buscar agente por nome\n5- encerrar programa");
-
-//printf("menu local:\n1- Editar este agente\n2-excluir este agente\n3-voltar ao menu geral");
-
-//TEMOS QUE FAZER ALGUMA OPÇÃO CASO O USUÁRIO DIGITE UM NÚMERO INVÁLIDO OU COLOQUE UM LETRA,
-//PQ POR AGORA ESTÁ QUEBRANDO O PROGRAMA
-
-
-
 
 #include <stdio.h>
-#define MAX 5
-void menuGeral(){
-        int menusinhoGeral = 0; //Tirei o '()' antes do '='
-        printf("Olá! Eu sou a Margaret!\nEstou aqui pra te ajudar a achar IAs para te auxiliar no trabalho!\nPrimeiro, escolha uma das opções a seguir:"); // Faltava vírgula
-        printf("\n1 - Cadastrar\n");
-        printf("2 - Listar\n");
-        printf("3 - Buscar ID\n");
-        printf("4 - Buscar Nome\n");
-        printf("5 - Buscar Setor\n");
-        printf("6 - Encerrar programa\n");
-        printf("Digite sua a opção desejada: ");
-        scanf("%d", &menusinhoGeral);
-        return menuGeral();
-        }
-void menuLocal(){
-    int menusinhoLocal = 0;
-    printf("1 - Editar esta IA");
-    printf("2 - Excluir esta IA");
-    printf("3 - Voltar ao menu Geral");
-    scanf("%d", &menusinhoLocal);
-    return menuLocal(); //Aqui tem que ser menuLocal()
+#include <string.h>
+#define MAX 50
+
+/*
+char prompt[];
+int notas[];
+int setor[];
+*/
+
+int setores(){
+	printf("1 - TI\n");
+	printf("2 - Cozinha\n");
+	printf("3 - Recursos Humanos\n");
+	printf("4 - Financeiro\n");
+	printf("5 - Estoque\n");
+	printf("6 - Outros\n");
+	printf("7 - voltar ao menu Geral\n"); //quando clicar, cancela a criação de uma ia e volta ao menu geral
+}
+
+
+int menuGeral() {
+    int escolhaMenuGeral = 0;
+
+    printf("\nOlá! Eu sou a Margaret!\n");
+    printf("Estou aqui para te ajudar a achar I.A's!\n");
+    printf("\n1 - Cadastrar\n");
+    printf("2 - Listar\n");
+    printf("3 - Buscar ID\n");
+    printf("4 - Buscar Nome\n");
+    printf("5 - Buscar Setor\n");
+    printf("6 - Encerrar Programa\n");
+    printf("Digite a opção desejada: ");
+
+    scanf("%d", &escolhaMenuGeral);
+
+    return escolhaMenuGeral;
+}
+
+int menuLocal(){
+	int menusinhoLocal = 0;
+	printf("1 - Editar esta IA");
+	printf("2 - Excluir IA");
+	printf("3 - Voltar ao menu Geral");
+	scanf("%d", &menusinhoLocal);
+	return menusinhoLocal;
+}
+
+char cadastro(int ids[MAX], char nomes[MAX][50], char setor[MAX][50], int notas[MAX], int *qtd) {
+    /*
+	if (*qtd >= MAX) {
+        printf("Limite de IAs atingido!\n");
+        return;
     }
+    */
+    ids[*qtd] = *qtd + 1;
 
-//BUSCAR POR ID
+    printf("\n--- Cadastro de nova IA ---\n");
 
-//Função de buscarID
-//Recebe a lista de ID's,nomes, notas e qtd total
-void buscarId(int ids[], char nomes[][50], float notas[], int qtd) {
+    // O espaço antes do %s limpa o buffer automaticamente
+    printf("Digite o nome da IA: ");
+    scanf(" %s", nomes[*qtd]);
+
+    printf("Digite o setor da IA: ");
+    setores();
+
+    printf("Digite a nota da IA (1 - 5):");
+    scanf(" %d", &notas[*qtd]);
+
+    (*qtd)++;
+
+
+    printf("IA cadastrada com sucesso!\n");
+}
+
+void buscarId(int ids[MAX], char nomes[][50], int notas[], int qtd){
     int idBusca;
     int encontrado = 0;
+    int i;
 
     printf("Qual ID deseja buscar? ");
     scanf("%d", &idBusca);
 
-    //Não sei até hoje explicar 'int i' kkkk
-    for (int i = 0; i < qtd; i++) {
-        if (ids[i] == idBusca) {
-            printf("\nAgente encontrado!\n");
-            printf("ID: %d\n", ids[i]);
-            printf("Nome: %s\n", nomes[i]);
-            printf("Nota: %.1f\n", notas[i]);
+    for (i = 0; i < qtd; i++){
+        if (ids[i] == idBusca){
+			printf("\nAgente encontrado!\n");
+			printf("ID: %d\n", ids[i]);
+			printf("Nome: %s\n", nomes[i]);
+			printf("Nota: %d\n", notas[i]);
 
-            encontrado = 1;
-            break;
-        }
-    }
-    //Caso o usuário coloque um ID que não existe
-    if (encontrado == 0) {
-        printf("Nenhum agente encontrado com o ID %d.\n", idBusca);
-    }
+			encontrado = 1;
+			break;
+		}
+	}
+
+	if (encontrado == 0){
+		printf("Nenhum agente encontrado com o ID %d.\n", idBusca);
+	}
 }
-
-//Tentando fazer a busca por nome
-//Ainda não está funcionando...
-/*
-void buscarNome() {
-    char nomeBusca;
-    int encontradoNome = 0;
-
-    printf("Qual nome deseja buscar? ");
-    scanf("%c", &nomeBusca);
-
-    if (nomeBusca == nomeIA[i][0]){
-        printf("\nAgente encontrado!\n");
-        printf("ID: %d\n", ids[i]);
-        printf("Nome: %s\n", nomes[i]);
-        printf("Nota: %.1f\n", notas[i]);
-
-        encontradoNome = 1;
-        break;
-    }
-    if (encontradoNome == 0) {
-            printf("Nenhum agente encontrado com o nome %c.\n", nomeBusca);
-    }
-}
-*/
-
-//2. Como chamar essa função n
-void listar(); //tudo que eu colocar como void vai ser uma função. Estou escrevendo elas fora do main por enquanto. se quiser mudar pode mudar - mi
-void buscarSetor();
-void encerrar();
-
-//nós vamos ter que usar arranjos para criar matrizes.
-int ids[];
-char ia[];
-char nomeIA[];
-char script[];
-char nota[];
-char setores[];
-
 
 int main() {
-    // I.A's cadastradas para teste.
-    char nomes[MAX][50] = {"Gabrielly", "Xcode", "Margaret"}; //está com um fluxo de retorno, quando cadawstramos ele volta a pedir o nome novamente.
-    float notas[MAX] = {4.0,4.0,5.0}; // pensei de ser int já que tem que ser de 1-5
+    char nomes[MAX][50] = {"Gabrielly", "Xcode", "Margaret"};
+    int notas[MAX] = {4, 4, 5};
+    char setor[MAX][50] = {"Estoque", "TI", "Outros"};
+    int ids[MAX] = {1, 2, 3};
+	int qtd = 3;
+    int escolha;
 
-    int qtd = 3; // Deixar 3 como valor do int qtd, não mudar.
-    int i;
     do {
-        menuGeral();
-        } while (menuGeral!= 7);
-    switch (menuGeral()){
-case 1:
-    cadastro();
-    break;
-case 2:
-    listar();
-    break;
-case 3:
-    buscarId();
-    break;
-case 4:
-    buscarNome();
-    break;
-case 5:
-    buscarSetor();
-case 6:
-    encerrar()
-    break;}
+        escolha = menuGeral();
+
+        switch (escolha) {
+            case 1:
+                cadastro(ids, nomes, setor, notas, &qtd);
+                break;
+
+            case 2:
+                printf("Listar IAs\n");
+                break;
+
+			case 3:
+    		buscarId(ids, nomes, notas, qtd);
+    		break;
+
+            case 4:
+                printf("Buscar por nome\n");
+                break;
+
+            case 5:
+                printf("Buscar por setor\n");
+                break;
+
+            case 6:
+                printf("Encerrando o programa...\n");
+                break;
+
+            default:
+                printf("Opção inválida! Tente novamente.\n");
+        }
+
+    } while (escolha != 6);
+
+    return 0;
 }
