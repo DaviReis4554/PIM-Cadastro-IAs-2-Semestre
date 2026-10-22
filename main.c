@@ -1,7 +1,18 @@
 
 #include <stdio.h>
 #include <string.h>
-#define MAX 50
+#define qtdIA 50
+
+/*
+Coisa que você pediu para anotar...
+#define QTD 5
+#define TAM_NOME 81
+#define QTD_NOTAS 2
+
+int ras[QTD]
+char nome[QTD][TAM_NOME]
+int faltas[QTD]
+*/
 
 /*
 char prompt[];
@@ -47,7 +58,7 @@ int menuLocal(){
 	return menusinhoLocal;
 }
 
-char cadastro(int ids[MAX], char nomes[MAX][50], char setor[MAX][50], int notas[MAX], int *qtd) {
+char cadastro(int ids[qtdIA], char nomes[qtdIA][50], char setor[qtdIA][50], int notas[qtdIA], int *qtd) {
     /*
 	if (*qtd >= MAX) {
         printf("Limite de IAs atingido!\n");
@@ -63,7 +74,7 @@ char cadastro(int ids[MAX], char nomes[MAX][50], char setor[MAX][50], int notas[
     scanf(" %s", nomes[*qtd]);
 
     printf("Digite o setor da IA: ");
-    setores();
+    scanf(" %s", setor[*qtd]);
 
     printf("Digite a nota da IA (1 - 5):");
     scanf(" %d", &notas[*qtd]);
@@ -74,7 +85,7 @@ char cadastro(int ids[MAX], char nomes[MAX][50], char setor[MAX][50], int notas[
     printf("IA cadastrada com sucesso!\n");
 }
 
-void buscarId(int ids[MAX], char nomes[][50], int notas[], int qtd){
+void buscarId(int ids[qtdIA], char nomes[][50], int notas[], int qtd){
     int idBusca;
     int encontrado = 0;
     int i;
@@ -100,9 +111,9 @@ void buscarId(int ids[MAX], char nomes[][50], int notas[], int qtd){
 }
 
 int main() {
-    char nomes[MAX][50] = {"Gabrielly", "Xcode", "Margaret"};
-    int notas[MAX] = {4, 4, 5};
-    char setor[MAX][50] = {"Estoque", "TI", "Outros"};
+    char nomes[qtdIA][50] = {"Gabrielly", "Xcode", "Margaret"};
+    int notas[qtdIA] = {4, 4, 5};
+    char setor[qtdIA][50] = {"Estoque", "TI", "Outros"};
     int ids[MAX] = {1, 2, 3};
 	int qtd = 3;
     int escolha;
