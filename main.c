@@ -91,7 +91,7 @@ char cadastro(int ids[qtdIA], char nomes[qtdIA][50], char setor[qtdIA][50], int 
 		return;
 	}
 	
-	//strcpy
+	//strcpy pega a string
 	if (opcao == 1){
 		strcpy(setor[*qtd], "TI");
 	} else if (opcao == 2) {
