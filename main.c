@@ -21,6 +21,7 @@ int setor[];
 */
 
 int setores(){
+	int opcao;
 	printf("1 - TI\n");
 	printf("2 - Cozinha\n");
 	printf("3 - Recursos Humanos\n");
@@ -28,6 +29,10 @@ int setores(){
 	printf("5 - Estoque\n");
 	printf("6 - Outros\n");
 	printf("7 - voltar ao menu Geral\n"); //quando clicar, cancela a criação de uma ia e volta ao menu geral
+	printf("Escolha o setor: ");
+	scanf("%d", &opcao);
+	
+	return opcao;
 }
 
 
@@ -65,22 +70,47 @@ char cadastro(int ids[qtdIA], char nomes[qtdIA][50], char setor[qtdIA][50], int 
         return;
     }
     */
-    ids[*qtd] = *qtd + 1;
-
+    int opcao; 
+    
     printf("\n--- Cadastro de nova IA ---\n");
 
     // O espaço antes do %s limpa o buffer automaticamente
     printf("Digite o nome da IA: ");
     scanf(" %s", nomes[*qtd]);
 
-    printf("Digite o setor da IA: ");
-    scanf(" %s", setor[*qtd]);
+    printf("Digite o setor da IA: \n");
+    opcao = setores();
+    
+    while (opcao < 1 || opcao > 7){
+    	printf("Opção inválida!\n");
+    	opcao = setores();
+	}
+	
+	if (opcao == 7){
+		printf("Cadastro cancelado!\n");
+		return;
+	}
+	
+	//strcpy
+	if (opcao == 1){
+		strcpy(setor[*qtd], "TI");
+	} else if (opcao == 2) {
+        strcpy(setor[*qtd], "Cozinha");
+    } else if (opcao == 3) {
+        strcpy(setor[*qtd], "Recursos Humanos");
+    } else if (opcao == 4) {
+        strcpy(setor[*qtd], "Financeiro");
+    } else if (opcao == 5) {
+        strcpy(setor[*qtd], "Estoque");
+    } else if (opcao == 6) {
+        strcpy(setor[*qtd], "Outros");
+    }
 
     printf("Digite a nota da IA (1 - 5):");
     scanf(" %d", &notas[*qtd]);
 
-    (*qtd)++;
-
+    ids[*qtd] = *qtd + 1;
+	(*qtd)++;    
 
     printf("IA cadastrada com sucesso!\n");
 }
@@ -114,7 +144,7 @@ int main() {
     char nomes[qtdIA][50] = {"Gabrielly", "Xcode", "Margaret"};
     int notas[qtdIA] = {4, 4, 5};
     char setor[qtdIA][50] = {"Estoque", "TI", "Outros"};
-    int ids[MAX] = {1, 2, 3};
+    int ids[qtdIA] = {1, 2, 3};
 	int qtd = 3;
     int escolha;
 
