@@ -240,3 +240,19 @@ void buscarId(int x[y], char z[][y], int a[], int b);{
 			break;
 		}
 	}
+}
+
+void buscarNome(nomesIA[qtdIA]{
+    fopen(“arquivo.txt”, “r”);
+    char nome();
+
+    printf(“digite o nome que gostaria de buscar:\n”);
+    fgets(nome, tamNome, stdin);
+
+    for (i=0, i=tamNome, i++){
+        if (i == nome){
+            printf(i)
+            fclose(“arquivo.txt”):
+        }
+    }
+}
