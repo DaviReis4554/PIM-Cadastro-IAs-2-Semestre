@@ -1,6 +1,6 @@
 
 /*
-Coisa que você pediu para anotar...
+Coisa que vocï¿½ pediu para anotar...
 #define QTD 5
 #define TAM_NOME 81
 #define QTD_NOTAS 2
@@ -23,7 +23,7 @@ int setor[];
 #define tamNome 81
 #define tamPrompt 101
 
-//protótipos de funções:
+//protï¿½tipos de funï¿½ï¿½es:
 
 int menuSetores();
 
@@ -31,9 +31,9 @@ int menuGeral();
 
 int menuLocal();
 
-void buscarId(int x[y], char z[][y], int a[], int b);//ficou genérico(confirmar se podemos deixar o protótipo assim)
+void buscarId(int x[y], char z[][y], int a[], int b);//ficou genï¿½rico(confirmar se podemos deixar o protï¿½tipo assim)
 
-//protótipos de variável
+//protï¿½tipos de variï¿½vel
 char nomeIA[];
 char promptIA[];
 int qtdCadastradas();
@@ -81,7 +81,7 @@ int *qtdCadastradas) {
 
     printf("\n--- Cadastro de nova IA ---\n");
 
-    // O espaço antes do %s limpa o buffer automaticamente
+    // O espaï¿½o antes do %s limpa o buffer automaticamente
     printf("Digite o nome da IA: ");
     scanf(" %s", nomes[*qtdCadastradas]);
 
@@ -89,7 +89,7 @@ int *qtdCadastradas) {
     opcao = menuSetores();
 
     while (opcao < 1 || opcao > 7){
-    	printf("Opção inválida!\n");
+    	printf("Opï¿½ï¿½o invï¿½lida!\n");
     	opcao = setores();
 	}
 
@@ -166,7 +166,7 @@ int main() {
                 break;
 
             default:
-                printf("Opção inválida! Tente novamente.\n");
+                printf("Opï¿½ï¿½o invï¿½lida! Tente novamente.\n");
         }
 
     } while (escolha != 6);
@@ -189,7 +189,7 @@ int menuGeral(){
 
     int escolhaMenuGeral = 0;
 
-    printf("\nOlá! Eu sou a Margaret!\n");
+    printf("\nOlï¿½! Eu sou a Margaret!\n");
     printf("Estou aqui para te ajudar a achar I.A's!\n");
     printf("\n1 - Cadastrar\n");
     printf("2 - Listar\n");
@@ -197,7 +197,7 @@ int menuGeral(){
     printf("4 - Buscar Nome\n");
     printf("5 - Buscar Setor\n");
     printf("6 - Encerrar Programa\n");
-    printf("Digite a opção desejada: ");
+    printf("Digite a opï¿½ï¿½o desejada: ");
 
     scanf("%d", &escolhaMenuGeral);
 
@@ -206,14 +206,14 @@ int menuGeral(){
 
 int menuSetores(){
 	int opcao = 0;
-	printf("Agora, digite o número desejado!\n");
+	printf("Agora, digite o nï¿½mero desejado!\n");
 	printf("1 - TI\n");
 	printf("2 - Cozinha\n");
 	printf("3 - Recursos Humanos\n");
 	printf("4 - Financeiro\n");
 	printf("5 - Estoque\n");
 	printf("6 - Outros\n");
-	printf("7 - voltar ao menu Geral\n"); //quando clicar, cancela a criação de uma ia e volta ao menu geral
+	printf("7 - voltar ao menu Geral\n"); //quando clicar, cancela a criaï¿½ï¿½o de uma ia e volta ao menu geral
 	printf("Escolha o setor: ");
 	scanf(" %d", &opcao);
 
@@ -243,16 +243,16 @@ void buscarId(int x[y], char z[][y], int a[], int b);{
 }
 
 void buscarNome(nomesIA[qtdIA]{
-    fopen(“arquivo.txt”, “r”);
+    fopen(ï¿½arquivo.txtï¿½, ï¿½rï¿½);
     char nome();
 
-    printf(“digite o nome que gostaria de buscar:\n”);
+    printf(ï¿½digite o nome que gostaria de buscar:\nï¿½);
     fgets(nome, tamNome, stdin);
 
     for (i=0, i=tamNome, i++){
         if (i == nome){
             printf(i)
-            fclose(“arquivo.txt”):
+            fclose(ï¿½arquivo.txtï¿½):
         }
     }
 }

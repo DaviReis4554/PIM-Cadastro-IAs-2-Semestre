@@ -25,6 +25,9 @@
 		<Unit filename="SegundaVersão.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="TerceiraVersão.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
