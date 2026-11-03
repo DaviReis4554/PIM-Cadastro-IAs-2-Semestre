@@ -22,10 +22,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="SeDeusQuiserUltimaVersão.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="SegundaVersão.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="TerceiraVersão.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bin/SeDeusQuiserUltimaVersão.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

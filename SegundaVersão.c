@@ -1,6 +1,7 @@
 //incluindo bibliotecas e definindo
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #define qtdIA 50
 #define tamNome 81
 #define tamPrompt 101
@@ -83,6 +84,7 @@ do {
 
 //funções completas
 
+<<<<<<< HEAD
 int menuGeral(){
 
     int escolhaMenuGeral = 0;
@@ -171,6 +173,17 @@ for(int i  = 0; promptIA[i] != '\0' ; i++ ){
     if (promptIA[i] == '\n'){
         promptIA[i] = '\0';
         break;
+=======
+void buscarNome(nomesIA[qtdIA]{
+    fopen(“arquivo.txt”, “r”);
+    char nome();
+    printf(“digite o nome que gostaria de buscar:\n”);
+    fgets(nome, tamNome, stdin);
+    for (i=0, i=tamNome, i++){
+        if (i == nome){
+            printf(i);
+    fclose(“arquivo.txt”):
+>>>>>>> 7278fd45e1494f5a9b121855670ee52567c10ba2
     }
 }
 

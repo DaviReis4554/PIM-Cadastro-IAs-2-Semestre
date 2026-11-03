@@ -161,7 +161,16 @@ void buscarSetor(int setor[], char nomesIA[][tamNome], int ids[], int notas[], i
     int encontrado = 0;
 
     printf("Digite o setor que deseja buscar (1 - 6): ");
+	printf("1 - TI\n");
+	printf("2 - Cozinha\n");
+	printf("3 - Recursos Humanos\n");
+	printf("4 - Financeiro\n");
+	printf("5 - Estoque\n");
+	printf("6 - Outros\n");
+	printf("7 - voltar ao menu Geral\n");
+	printf("Escolha o setor: ")
     scanf("%d", &setorBusca);
+
 
     printf("\n--- IAs no Setor %d ---\n", setorBusca);
     for (int i = 0; i < qtdCadastradas; i++) {

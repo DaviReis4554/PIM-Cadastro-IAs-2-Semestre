@@ -1,4 +1,4 @@
-// segundo commit
+
 //Bibliotecas------
 #include <stdio.h>
 #include <string.h>
@@ -192,8 +192,7 @@ void buscarId(int x[], char z[][tamNome], int a[], int b) {
 }
 
 
-void cadastro(int ids[], char nomesIA[][tamNome],
-              int setor[], int notas[], int *qtdCadastradas) {
+void cadastro(int ids[], char nomesIA[][tamNome],int setor[], int notas[], int *qtdCadastradas) {
 
     FILE *arquivoIA;
 
@@ -242,8 +241,7 @@ void cadastro(int ids[], char nomesIA[][tamNome],
 }
 
 
-void buscarSetor(int setor[], char nomesIA[][tamNome],
-                 int ids[], int notas[], int qtdCadastradas) {
+void buscarSetor(int setor[], char nomesIA[][tamNome],int ids[], int notas[], int qtdCadastradas) {
 
     int setorBusca;
     int encontrado = 0;
@@ -300,8 +298,7 @@ int menuSetores(){
 }
 
 
-void listarIAs(int ids[], char nomesIA[][tamNome],
-               int setor[], int notas[], int qtdCadastradas) {
+void listarIAs(int ids[], char nomesIA[][tamNome],int setor[], int notas[], int qtdCadastradas) {
 
     if (qtdCadastradas == 0) {
         printf("Nenhuma IA cadastrada.\n");
