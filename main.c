@@ -1,3 +1,5 @@
+// VERSÃO DE 02/11/2026 - 21:21
+
 //Bibliotecas------
 #include <stdio.h>
 #include <string.h>
