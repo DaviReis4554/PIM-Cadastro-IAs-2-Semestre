@@ -4,6 +4,7 @@
 	<ActiveTarget name="Release" />
 	<File name="main.c" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
+<<<<<<< HEAD
 			<Cursor1 position="6875" topLine="35" />
 		</Cursor>
 		<Folding>
@@ -15,6 +16,20 @@
 		</Folding>
 	</File>
 	<File name="bin\SeDeusQuiserUltimaVersão.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+=======
+			<Cursor1 position="1590" topLine="17" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="32" topLine="0" />
+		</Cursor>
+		<Folding>
+			<Collapse line="207" />
+		</Folding>
+	</File>
+	<File name="TerceiraVersão.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+>>>>>>> b30b596ef3000bfcc01e0e0bdf2fe71cc6c8a720
 		<Cursor>
 			<Cursor1 position="2352" topLine="62" />
 		</Cursor>
