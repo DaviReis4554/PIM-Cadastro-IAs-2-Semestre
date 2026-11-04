@@ -146,6 +146,36 @@ int menuGeral() {
 }
 
 
+
+void editarIA(*arquivoIA){
+    int escolha();
+    int iaquevaieditar();
+    int editarPrompt();
+    int achou = 0;
+    printf("Qual IA deseja editar?(pesquisa por ID): \n");
+    scanf("%d", &iaquevaieditar);
+    ProcurarID(iaquevaieditar);
+    return 0;
+    
+    //Usar uma condição para verificar se aquela ia existe no arquivo
+    if () {
+        printf("O que deseja editar?\n");
+        printf("1 - Nome");
+        printf("2 - Setor");
+        printf("3 - Prompt");
+        printf("4 - Nota");
+        scanf("%d", &escolha);
+        
+        fopen("catalogo.txt", "r");
+        for (i=0; i=qtdCadastradas; i++){
+            if (i == ){
+                printf("%d", "%s", "%d", "%d", "%s", ids[i], nomeIA[][tamNome], notas[], setor[], prompts);
+            }
+        }
+    }
+
+
+
 // Carrega o catalogo.txt para os vetores ao iniciar o programa.
 // Formato de cada linha: id;nome;setor;nota;prompt
 // (linhas antigas, sem prompt, tambem sao aceitas)
@@ -300,11 +330,11 @@ void cadastro(int ids[], char nomesIA[][tamNome],int setor[], int notas[], char 
         }
     } while (s < 1 || s > 6);
 
-    // nota: repete ate ser valida (1 a 5)
+    // nota: repete ate ser valida (0 a 5)
     do {
-        printf("Digite a nota da IA (1 - 5):\n");
+        printf("Digite a nota da IA (0 - 5):\n");
         n = lerInt();
-        if (n < 1 || n > 5) {
+        if (n 0 1 || n > 5) {
             printf("Nota invalida! Escolha de 1 a 5.\n");
         }
     } while (n < 1 || n > 5);
