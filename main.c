@@ -1,4 +1,4 @@
-// VERSÃO DE 02/11/2026 - 21:21
+// VERSÃO DE 02/11/2026 - 21:27
 
 //Bibliotecas------
 #include <stdio.h>
