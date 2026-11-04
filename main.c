@@ -1,5 +1,3 @@
-// VERSÃO DE 02/11/2026 - 21:27
-
 //Bibliotecas------
 #include <stdio.h>
 #include <string.h>
@@ -8,26 +6,20 @@
 //Definindo----------
 #define qtdIA 50
 #define tamNome 81
-#define tamPrompt 101
+#define tamPrompt 1001
 
 //protótipos de funções----------------------------------------------------------------------------
 int menuGeral();
+int menuLocal();
 int menuSetores();
-int lerInt();
-int lerTexto(char dest[], int tam);
-
+int lerInt(); //oq é isso
+int lerTexto(char dest[], int tam); // pra que serve
 void cadastro(int ids[], char nomesIA[][tamNome], int setor[], int notas[], char prompts[][tamPrompt], int *qtdCadastradas);
-
 void listarIA(int ids[], char nomesIA[][tamNome], int setor[], int notas[], char prompts[][tamPrompt], int qtdCadastradas);
-
 void buscarSetor(int setor[], char nomesIA[][tamNome], int ids[], int notas[], char prompts[][tamPrompt], int qtdCadastradas);
-
 void buscarId(int x[], char z[][tamNome], int a[], char p[][tamPrompt], int b);
-
 void buscarNome(int ids[], char nomesIA[][tamNome], int notas[], char prompts[][tamPrompt], int qtdCadastradas);
-
 void carregarCatalogo(int ids[], char nomesIA[][tamNome], int setor[], int notas[], char prompts[][tamPrompt], int *qtdCadastradas);
-
 void terminarLinha(FILE *arq);
 
 //variáveis globais------------
@@ -38,8 +30,7 @@ int ids[qtdIA];
 char prompts[qtdIA][tamPrompt];
 int qtdCadastradas = 0;
 
-const char *nomesSetor[] = {"Desconhecido", "TI", "Cozinha", "Recursos Humanos",
-                            "Financeiro", "Estoque", "Outros"};
+const char *nomesSetor[] = {"Desconhecido", "TI", "Cozinha", "Recursos Humanos", "Financeiro", "Estoque", "Outros"}; //o que é isso?
 
 
 int main(){
@@ -76,6 +67,11 @@ int main(){
                 printf("Encerrando o programa...\n");
                 break;
 
+            case 7:
+             printf("Este programa foi feito com base na LGPD, com o objetivo de conectar e ajudar pessoas.");
+             printf("Ao cadastrar ou editar nosso sistema, sempre se lembre que outros o usarão.");
+             printf("Sempre leve em conta os direitos humanos ao adicionar IAs e seus prompts.");
+             printf("A Margareth agradece! <3");
             case 0:
                 printf("Entrada invalida! Digite um numero.\n");
                 break;
@@ -142,7 +138,8 @@ int menuGeral() {
     printf("3 - Buscar por ID\n");
     printf("4 - Buscar por nome\n");
     printf("5 - Buscar por setor\n");
-    printf("6 - Sair\n");
+    printf("6 - Sair\n"); 
+    printf("7 - LEIA-ME\n");
     printf("Escolha uma opcao: ");
 
     return lerInt();
@@ -152,8 +149,7 @@ int menuGeral() {
 // Carrega o catalogo.txt para os vetores ao iniciar o programa.
 // Formato de cada linha: id;nome;setor;nota;prompt
 // (linhas antigas, sem prompt, tambem sao aceitas)
-void carregarCatalogo(int ids[], char nomesIA[][tamNome], int setor[], int notas[],
-                      char prompts[][tamPrompt], int *qtdCadastradas) {
+void carregarCatalogo(int ids[], char nomesIA[][tamNome], int setor[], int notas[], char prompts[][tamPrompt], int *qtdCadastradas) {
 
     FILE *arq = fopen("catalogo.txt", "r");
     char linha[400];
@@ -370,6 +366,16 @@ void buscarSetor(int setor[], char nomesIA[][tamNome],int ids[], int notas[], ch
         printf("Nenhuma IA encontrada no setor %s.\n", nomesSetor[setorBusca]);
     }
 }
+
+int menuLocal(){
+  int  menusinhoLocal = 0;
+  printf("O que gostaria de fazer com essa IA? :)")
+  printf("1 - Editar");
+  printf("2 - Excluir");
+  printf("3 - Voltar ao menu principal");
+  scanf("%d", &menusinhoLocal);
+}
+
 
 
 int menuSetores(){
